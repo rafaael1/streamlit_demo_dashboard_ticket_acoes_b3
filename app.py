@@ -72,14 +72,22 @@ st.plotly_chart(grafico_candlestick)
 # Mostrar dados do gráfico em tabela
 if st.checkbox('Mostrar dados em tabela'):
   st.subheader('Tabela de registro')
+
   # Ordenação por data mais recente
   dados = dados.sort_index(ascending=False)
+
   dados.index = dados.index.strftime('%d-%m-%Y')
   dados.index.name = 'Data'
   styler = dados.reset_index().style.hide_index().format(subset=['Open','High','Low','Close','Adj Close'], decimal=',', precision=2)
   st.write(styler.to_html(), unsafe_allow_html=True)
-  ## Outra alternativa
-  # st.dataframe(styler, 100, 200)
+
+  # Salvando os dados em CSV
+  st.markdown('<br />', unsafe_allow_html=True)
+  csv = dados.to_csv().encode('utf-8')
+  st.download_button('Download CSV file', 
+                      data=csv,
+                      file_name=f'registro_acao_{Selecao}_em_{selecao_range}m.csv',
+                      mime='text/csv')
 
   # Estilizando a tabela por meio de hack com st.markdown
 styler_table = """
