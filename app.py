@@ -10,13 +10,15 @@ from plotly.subplots import make_subplots
 import yfinance as yf
 yf.pdr_override()
 
-
+# Sidebar - seleção
 st.sidebar.title('Menu')
 
 # Lista das empresas - ticket B3
 Empresas = ['ITSA4', 'EZTC3', 'ITUB4', 'ENBR3', 'ENAT3', 'ALUP4',
       'RENT3', 'DIRR3', "LREN3", "KLBN11", "WIZS3", "CPLE3", "RADL3"]
+
 Empresas.sort()
+
 Selecao = st.sidebar.selectbox(
   'Selecione a empresa:', Empresas, format_func=lambda x: x + '.SA')
 
@@ -70,15 +72,16 @@ st.plotly_chart(grafico_candlestick)
 # Mostrar dados do gráfico em tabela
 if st.checkbox('Mostrar dados em tabela'):
   st.subheader('Tabela de registro')
+  # Ordenação por data mais recente
   dados = dados.sort_index(ascending=False)
   dados.index = dados.index.strftime('%d-%m-%Y')
   dados.index.name = 'Data'
   styler = dados.reset_index().style.hide_index().format(subset=['Open','High','Low','Close','Adj Close'], decimal=',', precision=2)
   st.write(styler.to_html(), unsafe_allow_html=True)
   ## Outra alternativa
-  # st.dataframe(dados, 100, 200)
+  # st.dataframe(styler, 100, 200)
 
-  # Estilizando por meio de hack com st.markdown
+  # Estilizando a tabela por meio de hack com st.markdown
 styler_table = """
       <style>
         .css-1offfwp th, .css-1offfwp td { padding: 0.4rem 1.5rem; border : 0 }
