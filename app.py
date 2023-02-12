@@ -1,3 +1,5 @@
+# Autor : Rafael Gonçalves
+
 import streamlit as st
 
 import pandas as pd
@@ -86,7 +88,7 @@ if st.checkbox('Mostrar dados em tabela'):
   csv = dados.to_csv().encode('utf-8')
   st.download_button('Download CSV file', 
                       data=csv,
-                      file_name=f'registro_acao_{Selecao}_em_{selecao_range}m.csv',
+                      file_name=f'registro_acao_{Selecao}_em_{slider}m.csv',
                       mime='text/csv')
 
   # Estilizando a tabela por meio de hack com st.markdown
