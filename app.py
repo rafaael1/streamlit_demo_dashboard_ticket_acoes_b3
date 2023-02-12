@@ -24,8 +24,8 @@ hide_menu = """
 st.markdown(hide_menu, unsafe_allow_html=True)
 
 # Lista das empresas - ticket B3
-Empresas = ['ITSA4', 'EZTC3', 'ITUB4', 'ENBR3', 'ENAT3', 'ALUP4',
-      'RENT3', 'DIRR3', "LREN3", "KLBN11", "WIZS3", "CPLE3", "RADL3"]
+Empresas = ['ITSA4', 'EZTC3', 'ITUB4', 'ENBR3', 'ENAT3', 'ALUP4', 'BBAS3', 'TRPL4', 'SAPR11',
+      'RENT3', 'DIRR3', 'LREN3', 'KLBN11', 'WIZS3', 'CPLE3', 'RADL3', 'TAEE11', 'CMIG4', 'PRIO3']
 
 Empresas.sort()
 
@@ -41,7 +41,7 @@ col1, col2 = st.columns([3, 0.2])
 
 # Imagens
 col2.image(
-  f'https://www.ivalor.com.br/media/emp/logos/{Selecao[0:4]}.png', width=100)
+  f'https://www.ivalor.com.br/media/emp/logos/{Selecao[0:4]}.png', width=108)
 
 # Titulo
 titulo = f'Análise Econômica { str(Selecao) }'
