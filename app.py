@@ -15,6 +15,14 @@ yf.pdr_override()
 # Sidebar - seleção
 st.sidebar.title('Menu')
 
+# O hamburger menu oculto
+hide_menu = """
+      <style>
+        #MainMenu { visibility: hidden; }
+      </style>
+      """
+st.markdown(hide_menu, unsafe_allow_html=True)
+
 # Lista das empresas - ticket B3
 Empresas = ['ITSA4', 'EZTC3', 'ITUB4', 'ENBR3', 'ENAT3', 'ALUP4',
       'RENT3', 'DIRR3', "LREN3", "KLBN11", "WIZS3", "CPLE3", "RADL3"]
