@@ -9,6 +9,7 @@ __pycache__/
 
 # C extensions
 *.so
+*.PNG
 
 # Distribution / packaging
 .Python
@@ -69,8 +70,8 @@ db.sqlite3-journal
 instance/
 .webassets-cache
 
-# Scrapy stuff:
-.scrapy
+# Streamlit stuff:
+.streamlit
 
 # Sphinx documentation
 docs/_build/
