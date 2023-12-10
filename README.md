@@ -15,7 +15,7 @@ Dashboard criado com Python e Streamlit para visualização de dados dos preços
 Desenvolvido durante a Semana de Eventos - Soluções com Python.
 
 #### Dashboard:
-![Dashboard](image.png "Análise Econômica Dashboard")
+![Dashboard](images/image.png "Análise Econômica Dashboard")
 
 ## ⛲ Fonte
 
