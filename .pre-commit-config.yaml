@@ -1,0 +1,34 @@
+default_language_version:
+    python: python3.11.7
+exclude: '.cache|.git|.tox'
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: end-of-file-fixer
+        files: .*\.*.py
+    -   id: trailing-whitespace
+        files: .*\.*.py
+    -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: requirements-txt-fixer
+    -   id: debug-statements
+
+-   repo: local
+    hooks:
+    -   id: black
+        name: black
+        entry: pipx run black
+        language: python
+        language_version: python3.11
+        types: [python]
+        args: ['--check', '--diff', '--color', '-l', '100']
+
+-   repo: local
+    hooks:
+    -   id: isort
+        name: isort
+        entry: pipx run isort
+        language: system
+        args: ["--profile", "black", "--filter-files", "--skip-gitignore"]
