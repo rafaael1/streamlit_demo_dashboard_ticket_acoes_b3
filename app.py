@@ -13,14 +13,6 @@ st.set_page_config(page_title="Análise Econômica App", page_icon="📈", layou
 # Sidebar - seleção
 st.sidebar.title("Menu")
 
-# O hamburger menu oculto
-hide_menu = """
-      <style>
-        #MainMenu { visibility: hidden; }
-      </style>
-      """
-st.markdown(hide_menu, unsafe_allow_html=True)
-
 # Lista das empresas - ticket B3
 Empresas = [
     "ITSA4",
