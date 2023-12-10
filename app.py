@@ -1,4 +1,8 @@
-# Autor : Rafael Gonçalves
+"""
+Análise Econômica Dashboard
+
+@author: Rafael Gonçalves
+"""
 
 import pandas_datareader.data as pdrd
 import plotly.graph_objects as go
@@ -35,6 +39,9 @@ Empresas = [
     "TAEE11",
     "CMIG4",
     "PRIO3",
+    "CXSE3",
+    "AESB3",
+    "EGIE3",
 ]
 
 Empresas.sort()
